@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./code:/usr/src/code
+      - ./:/usr/src/code
     depends_on:
       - db
     links:
