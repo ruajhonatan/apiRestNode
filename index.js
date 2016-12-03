@@ -5,6 +5,11 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.listen(8000, () => {
-    console.log("API RESTful corriento en http://0.0.0.0:8000");
+const port = process.env.PORT || 8000;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.listen(port, () => {
+    console.log(`API RESTful corriendo en http://0.0.0.0:${port}`);
 });
